@@ -1,22 +1,6 @@
 """модуль, отвечающий за отправку ПОСТ-запроса на бекэнд"""
 import requests
 
-DATA = {
-    "ID": 1,
-    "LicAge": 468,
-    "RecordBeg": "2004-01-01",
-    "RecordEnd": "",
-    "VehAge": "",
-    "Gender": "Male",
-    "MariStat": "Other",
-    "SocioCateg": "CSP50",
-    "VehUsage": "Private",
-    "DrivAge": 67,
-    "HasKmLimit": 0,
-    "BonusMalus": 56,
-    "OutUseNb": 0,
-    "RiskArea": 0
-}
 
 
 def send_json(data):
@@ -28,5 +12,21 @@ def send_json(data):
 
 
 if __name__ == '__main__':
+    DATA = {
+        "ID": 1,
+        "LicAge": 468,
+        "RecordBeg": "2004-01-01",
+        "RecordEnd": "",
+        "VehAge": "",
+        "Gender": "Male",
+        "MariStat": "Other",
+        "SocioCateg": "CSP50",
+        "VehUsage": "Private",
+        "DrivAge": 67,
+        "HasKmLimit": 0,
+        "BonusMalus": 56,
+        "OutUseNb": 0,
+        "RiskArea": 0
+    }
     RESULT = send_json(DATA)
     print(RESULT.json())

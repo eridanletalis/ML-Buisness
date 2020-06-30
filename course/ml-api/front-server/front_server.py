@@ -7,7 +7,7 @@ from requests.exceptions import ConnectionError
 from wtforms import IntegerField, SelectField
 from wtforms.validators import DataRequired
 
-from postman import data, send_json
+from postman import send_json
 
 
 class ClientDataForm(FlaskForm):
@@ -50,7 +50,22 @@ def predicted(response):
 @app.route('/predict_form', methods=['GET', 'POST'])
 def predict_form():
     """функция ввода данных"""
-    dict_data = data
+    dict_data =  {
+        "ID": 1,
+        "LicAge": 468,
+        "RecordBeg": "2004-01-01",
+        "RecordEnd": "",
+        "VehAge": "",
+        "Gender": "Male",
+        "MariStat": "Other",
+        "SocioCateg": "CSP50",
+        "VehUsage": "Private",
+        "DrivAge": 67,
+        "HasKmLimit": 0,
+        "BonusMalus": 56,
+        "OutUseNb": 0,
+        "RiskArea": 0
+    }
     form = ClientDataForm()
     if request.method == 'POST':
         dict_data['ID'] = request.form.get('id')
