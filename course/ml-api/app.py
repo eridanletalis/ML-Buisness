@@ -1,4 +1,4 @@
-"""Модуль бекэенда прогнозирования"""
+"""Модуль бекэенда сервиса"""
 
 from logging.handlers import RotatingFileHandler
 from time import strftime, time
